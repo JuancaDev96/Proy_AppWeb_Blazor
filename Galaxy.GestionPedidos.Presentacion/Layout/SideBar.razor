@@ -1,0 +1,80 @@
+﻿@inject NavigationManager NavigationManager
+
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <img src="imagenes/icon.png" alt="logo" />
+        <h2>Pedidos</h2>
+    </div>
+    <ul class="sidebar-links">
+       
+        <li>
+            <a href="#">
+                <span class="material-symbols-outlined"> dashboard </span>Dashboard
+            </a>
+        </li>
+       
+        <li>
+            <a href="#"><span class="material-symbols-outlined"> monitoring </span>Pedidos</a>
+        </li>
+       
+        <li class="has-submenu">
+            <input type="checkbox" id="projects-toggle" class="submenu-toggle">
+            <label for="projects-toggle">
+                <span class="material-symbols-outlined"> folder </span>Mantenimientos
+            </label>
+            <ul class="submenu">
+                <li><a href="productos">Productos</a></li>
+                <li><a href="#">Catalogos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Proveedores</a></li>
+            </ul>
+        </li>
+
+       
+
+        <li class="has-submenu">
+            <input type="checkbox" id="reports-toggle" class="submenu-toggle">
+            <label for="reports-toggle">
+                <span class="material-symbols-outlined"> folder </span>Reportes
+            </label>
+            <ul class="submenu">
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Pedidos</a></li>
+            </ul>
+        </li>
+
+       @*  <li>
+            <a href="#"><span class="material-symbols-outlined"> move_up </span>Transfer</a>
+        </li>
+        <li>
+            <a href="#"><span class="material-symbols-outlined"> flag </span>All Reports</a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="material-symbols-outlined"> notifications_active </span>Notifications
+            </a>
+        </li> *@
+       
+        <li class="has-submenu">
+            <input type="checkbox" id="profile-toggle" class="submenu-toggle">
+            <label for="profile-toggle">
+                <span class="material-symbols-outlined"> account_circle </span>Perfil
+            </label>
+            <ul class="submenu">
+                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="#">Permisos</a></li>
+                <li><a href="#">Cerrar Sesion</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="user-account">
+        <div class="user-profile">
+            <img src="imagenes/user.png" alt="Profile Image" />
+            <div class="user-detail">
+                <h3>Eva Murphy</h3>
+                <span>Web Developer</span>
+            </div>
+        </div>
+    </div>
+</aside>

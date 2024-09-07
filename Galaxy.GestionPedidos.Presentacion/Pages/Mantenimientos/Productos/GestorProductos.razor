@@ -1,0 +1,24 @@
+﻿@page "/productos"
+@using Galaxy.GestionPedidos.Presentacion.Modelos
+<h3>GestorProductos</h3>
+
+<EditForm Model="listaProducto">
+    <InputText @bind-Value="@listaProducto.descripcion" class="form-control"></InputText>
+</EditForm>
+
+@code {
+    ProductoResponse listaProducto = new ProductoResponse();
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaProducto = new()
+            {
+                Id = 1,
+                descripcion = "Pantalla de 32i",
+                nombre = "Monitor",
+                precio = 500
+            };
+       
+    }
+
+}

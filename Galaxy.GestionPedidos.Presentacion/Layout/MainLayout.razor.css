@@ -1,0 +1,51 @@
+
+/* Contenedor principal para el contenido del body */
+.main-container {
+    margin-left: 85px; /* Espacio para la barra lateral inicialmente colapsada */
+    padding: 20px;
+    transition: margin-left 0.4s ease;
+}
+
+.sidebar:hover ~ .main-container {
+    margin-left: 260px; /* Ajustar el margen izquierdo cuando la barra lateral está desplegada */
+}
+
+.content-header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .content-header h1 {
+        font-size: 1.5rem;
+        color: #161a2d;
+    }
+
+.header-actions .btn {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #4f52ba;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .header-actions .btn:hover {
+        background-color: #3d4096;
+    }
+
+.content-body {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
