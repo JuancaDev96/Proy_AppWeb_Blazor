@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Presentacion\Galaxy.GestionPedidos.Presentacion.csproj" />
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Repositorios\Galaxy.GestionPedidos.Repositorios.csproj" />
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Servicios\Galaxy.GestionPedidos.Servicios.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,7 +2,7 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [IdCliente] INT NULL, 
-    [IdColaborador] INT NULL, 
+    [IdColaborador] INT, 
     [TotalBruto] DECIMAL(10, 2) NULL, 
     [TotalNeto] DECIMAL(10, 2) NULL, 
     [AdelantoPedido] DECIMAL(10, 2) NULL,
@@ -12,7 +12,7 @@
     [FechaModificacion] DATETIME NULL, 
     [UsuarioModificacion] VARCHAR(50) NULL, 
     CONSTRAINT [FK_TbPedido_TbCliente] FOREIGN KEY ([IdCliente]) REFERENCES TbCliente(Id), 
-    CONSTRAINT [FK_TbPedido_TbColaborador] FOREIGN KEY ([IdColaborador]) REFERENCES TbColaborador(IdColaborador)
+    CONSTRAINT [FK_TbPedido_TbColaborador] FOREIGN KEY ([IdColaborador]) REFERENCES TbColaborador(Id)
 )
 
 GO

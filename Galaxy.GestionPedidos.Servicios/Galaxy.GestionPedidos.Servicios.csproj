@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Repositorios\Galaxy.GestionPedidos.Repositorios.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entities>
+  <Producto>
+    <Codigo>P001</Codigo>
+    <Nombre>TELEVISOR SAMSUNG</Nombre>
+    <Descripcion>PANTALLA 50I</Descripcion>
+    <Precio>1200</Precio>
+    <Stock>20</Stock>
+    <Id>1</Id>
+    <FechaRegistro>2024-09-06T23:25:49.565628-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>string</Codigo>
+    <Nombre>string</Nombre>
+    <Descripcion>string</Descripcion>
+    <Precio>0</Precio>
+    <Stock>0</Stock>
+    <Id>2</Id>
+    <FechaRegistro>2024-09-06T23:45:51.1992652-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P002</Codigo>
+    <Nombre>PLAYSTATION 5</Nombre>
+    <Descripcion>CON LECTORA DE CD</Descripcion>
+    <Precio>1500</Precio>
+    <Stock>10</Stock>
+    <Id>3</Id>
+    <FechaRegistro>2024-09-06T23:50:21.9554629-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P003</Codigo>
+    <Nombre>ARROZ</Nombre>
+    <Descripcion>SACO DE 50 KG</Descripcion>
+    <Precio>50</Precio>
+    <Stock>200</Stock>
+    <Id>4</Id>
+    <FechaRegistro>2024-09-07T00:03:03.9302976-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P004</Codigo>
+    <Nombre>LECHE</Nombre>
+    <Descripcion>CAJA DE 20 UNIDADES</Descripcion>
+    <Precio>30</Precio>
+    <Stock>100</Stock>
+    <Id>5</Id>
+    <FechaRegistro>2024-09-07T00:03:41.6808671-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P005</Codigo>
+    <Nombre>TOMATES</Nombre>
+    <Descripcion>CAJA DE TOMATES DE 20KG</Descripcion>
+    <Precio>15</Precio>
+    <Stock>500</Stock>
+    <Id>6</Id>
+    <FechaRegistro>2024-09-07T00:06:37.7791097-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P010</Codigo>
+    <Nombre>MAIZ MORADO</Nombre>
+    <Descripcion>SACO DE 40KG</Descripcion>
+    <Precio>20</Precio>
+    <Stock>30</Stock>
+    <Id>7</Id>
+    <FechaRegistro>2024-09-07T00:18:50.9247596-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+  <Producto>
+    <Codigo>P0024</Codigo>
+    <Nombre>TORTA</Nombre>
+    <Descripcion>DE 5KG</Descripcion>
+    <Precio>40</Precio>
+    <Stock>4</Stock>
+    <Id>8</Id>
+    <FechaRegistro>2024-09-07T00:19:34.1974496-05:00</FechaRegistro>
+    <UsuarioCreacion>juanc</UsuarioCreacion>
+    <Estado>true</Estado>
+  </Producto>
+</Entities>

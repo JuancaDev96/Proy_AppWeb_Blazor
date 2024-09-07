@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Entidades\Galaxy.GestionPedidos.Entidades.csproj" />
+    <ProjectReference Include="..\Galaxy.GestionPedidos.Transversal\Galaxy.GestionPedidos.Transversal.csproj" />
+  </ItemGroup>
+
 </Project>

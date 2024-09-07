@@ -1,0 +1,25 @@
+﻿@page "/producto/editar/{id:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+<h3>Editar Producto</h3>
+
+<EditarProductoComponent OnGrabar="GuardarProducto" Request="Request"></EditarProductoComponent>
+
+@code {
+    [Parameter] public int Id { get; set; }
+    BusquedaProductoRequest RequestProducto = new();
+    RegistroProductoRequest Request = new();
+
+    private async Task GuardarProducto()
+    {
+        try
+        {
+            await Http.PostAsJsonAsync($"api/Producto", Request);
+            NavigationManager.NavigateTo("productos");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+    }
+}

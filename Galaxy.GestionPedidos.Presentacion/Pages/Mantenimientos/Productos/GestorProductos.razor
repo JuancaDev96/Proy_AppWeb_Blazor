@@ -1,24 +1,121 @@
 ﻿@page "/productos"
-@using Galaxy.GestionPedidos.Presentacion.Modelos
-<h3>GestorProductos</h3>
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
-<EditForm Model="listaProducto">
-    <InputText @bind-Value="@listaProducto.descripcion" class="form-control"></InputText>
-</EditForm>
+<h3>Mantenimiento de productos</h3>
+
+<GroupBox Titulo="Buscar Productos" Class="mt-5">
+    <Contenido>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="codigo">Codigo</label>
+                <InputText id="codigo" class="form-control" @bind-Value="RequestProducto.Codigo" />
+            </div>
+            <div class="col-md-4">
+                <label for="Descripcion">Descripción</label>
+                <InputText id="Descripcion" class="form-control" @bind-Value="RequestProducto.Descripcion" />
+            </div>
+            <div class="col-md-4 mt-4">
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-primary" @onclick="OnBuscar">
+                        <i class="bi bi-search me-1"></i> Buscar
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" @onclick="OnLimpiar">Limpiar</button>
+                    @* <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#MdProducto" data-bs-whatever="@@getbootstrap">Nuevo</button> *@
+                    <button type="button" class="btn btn-outline-primary" @onclick="OnNuevo">Nuevo</button>
+                </div>
+            </div>
+        </div>
+    </Contenido>
+</GroupBox>
+
+@if (listaProducto is null)
+{
+    <div class="row mt-5">
+        <p>Cargando...</p>
+    </div>
+}
+else
+{
+
+    <table class="table table-bordered table-hover mt-5">
+        <thead>
+            <tr class="table-primary">
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listaProducto)
+            {
+                <tr>
+                    <td>@item.Codigo</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Descripcion</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Stock</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="() => onEditar(item.Id)"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+@* <Modal @ref="ModalEditarProducto" Nombre="MdProducto" Titulo="Nuevo Producto" Size="ModalSizeEnum.lg">
+    <Body>
+        <EditarProductoComponent OnGrabar="GuardarProducto" Request="Request"></EditarProductoComponent>
+    </Body>
+</Modal> *@
 
 @code {
-    ProductoResponse listaProducto = new ProductoResponse();
+    ICollection<ListadoProductoResponse>? listaProducto { get; set; }
+    BusquedaProductoRequest RequestProducto = new();
+    Modal ModalEditarProducto { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
-        listaProducto = new()
-            {
-                Id = 1,
-                descripcion = "Pantalla de 32i",
-                nombre = "Monitor",
-                precio = 500
-            };
-       
+        await ListarProductos();
     }
+
+    private async Task OnBuscar()
+    {
+
+    }
+
+    private async Task OnLimpiar()
+    {
+
+    }
+
+    private void onEditar(int id)
+    {
+        NavigationManager.NavigateTo($"producto/editar/{id}");
+    }
+
+    private void OnNuevo()
+    {
+        NavigationManager.NavigateTo("producto/nuevo");
+    }
+
+    private async Task ListarProductos()
+    {
+        try
+        {
+            listaProducto = await Http.GetFromJsonAsync<ICollection<ListadoProductoResponse>>($"api/Producto");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+    }
+
 
 }

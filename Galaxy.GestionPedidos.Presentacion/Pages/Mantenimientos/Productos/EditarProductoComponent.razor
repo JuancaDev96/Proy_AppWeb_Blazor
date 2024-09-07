@@ -1,0 +1,58 @@
+﻿@using Galaxy.GestionPedidos.Transversal.Dto.Request.Producto
+<EditForm Model="Request" OnValidSubmit="() => OnSave()">
+    <DataAnnotationsValidator />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Codigo" class="form-label">Codigo:</label>
+                <input type="text" @bind="Request.Codigo" class="form-control" />
+                <ValidationMessage For="() => Request.Codigo"></ValidationMessage><br />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Nombre" class="form-label">Nombre:</label>
+                <input type="text" @bind="Request.Nombre" class="form-control" />
+                <ValidationMessage For="() => Request.Nombre"></ValidationMessage><br />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Precio" class="form-label">Precio:</label>
+                <input type="number" @bind="Request.Precio" class="form-control" />
+                <ValidationMessage For="() => Request.Precio"></ValidationMessage><br />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Stock" class="form-label">Stock:</label>
+                <input type="number" @bind="Request.Stock" class="form-control" />
+                <ValidationMessage For="() => Request.Stock"></ValidationMessage><br />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea type="text" @bind="Request.Descripcion" class="form-control"></textarea>
+                <ValidationMessage For="() => Request.Descripcion"></ValidationMessage><br />
+            </div>
+        </div>
+    </div>
+    <div class="row gx-4 mt-4">
+        <div class="col">
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-floppy me-1"></i>Guardar</button>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+
+    [Parameter] public EventCallback OnGrabar { get; set; }
+    [Parameter] public RegistroProductoRequest Request { get; set; } = default!;
+
+    private async Task OnSave()
+    {
+        await OnGrabar.InvokeAsync();
+    }
+
+}
